@@ -10,13 +10,13 @@ def DistanceInKM(lat1,lon1,lat2,lon2): #Calculate distance by the Haversine form
 	D=float(6371*c)
 	return D
 
-def spaceraws(num): #efficient blank space raws function to decorate output
+def spaceraws(num): #efficient blank space raws function to decorate the output
 	for i in range(num):
 		print ("")
 
 
 t2=False
-while (t2!=True):	#while loop that will keep running until the user type N when asked if the code should run again to change measure unit (see line:76) or if manualy type exit (see line:31)
+while (t2!=True): #while loop that will keep running until the user type N when asked if the code should run again to change measure unit (see line:76) or if manualy type exit (see line:31)
 	t1=False
 	t2=False
 	print ("Please State The Output unit mesure"+"\n"+"\n"+"1.Milimeter"+"\n"+"2.Centimeter"+"\n"+"3.Meter"+"\n"+"4.Kilometer"+"\n"+"5.Miles"+"\n"+"6.LightYear")
@@ -24,14 +24,14 @@ while (t2!=True):	#while loop that will keep running until the user type N when 
 
 	usr_input=raw_input("state Unit measure: ")
 	spaceraws(2)
-	while (t1!=True):	# while loop that will keep running as long as the user gives the command to recalculate and not changing the measure unit (see lines:76-78)
+	while (t1!=True): #while loop that will keep running as long as the user gives the command to recalculate and not changing the measure unit (see lines:76-78)
 		try:
 			if (str(usr_input)=="exit" or str(usr_input)=="ex" or str(usr_input)=="quit" or str(usr_input)=="q"):
 				print("BYE")
 				t1=True
 				t2=True
 			else:
-				a=int(usr_input)  #checking if the user input is valid, and if not, an appropiate message will appear
+				a=int(usr_input)  #checking if the user input is valid, and if not, message will appear by the error handler(see line:91)
 				print("#LOCATION 1")
 				lat1=raw_input("Please specify Latitude1: ")
 				lon1=raw_input("Please specify Longitude1: ")
@@ -46,7 +46,7 @@ while (t2!=True):	#while loop that will keep running until the user type N when 
 
 
 
-				#print output based on which measure unit the user inserted
+				#print output based on which measure unit the user chosed
 				if (int(usr_input)==1):
 					print ("Distance = "+str(Distance*1000000)+"Mm")
 					spaceraws(4)
@@ -90,7 +90,7 @@ while (t2!=True):	#while loop that will keep running until the user type N when 
 		#errors handler
 		except:
 			print ("====================")
-			print ("something went wrong, pherhaps your input was invalid")
+			print ("something went wrong, perhaps your input was invalid")
 			print ("====================")
 			spaceraws(0)
 			t1=True
